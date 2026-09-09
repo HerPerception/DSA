@@ -5,7 +5,9 @@ To generate a fibonacci number, we need to add the two previous numbers.
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 =========================================================================================================================
