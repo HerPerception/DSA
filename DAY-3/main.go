@@ -1,6 +1,9 @@
 package main
 
 func main() {
-	BubbleSort()
-	SelectionSort()
+	//BubbleSort()
+	//fmt.Println()
+	InsertionSort()
+	//fmt.Println()
+	//SelectionSort()
 }
