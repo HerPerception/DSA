@@ -1,0 +1,39 @@
+/*============================================================================================
+Quicksort is one of the fastest sorting algorithm. It takes an array of values, chooses one of
+the values as the 'central' element, and moves the other values so that the lower values are
+on the left of the central element, and the higher values are on the right of it.
+==============================================================================================*/
+
+package main
+
+import "fmt"
+
+func main() {
+	myArray := []int{100, 150, 64, 34, 25, 3, 2, 10, 12, 22, 11, 90, 5}
+	low, high := 0, 0
+	fmt.Println(Quicksort(myArray, low, high))
+}
+func Partition(arr []int, low, high int) int {
+	pivot := arr[high]
+	i := low - 1
+	for j := low; j < high; j++ {
+		if arr[j] <= pivot {
+			i += 1
+			arr[i], arr[j] = arr[j], arr[i]
+		}
+	}
+	arr[i+1], arr[high] = arr[high], arr[i+1]
+	return i + 1
+}
+func Quicksort(arr []int, low, high int) []int {
+	if high == 0 {
+		high = len(arr) - 1
+	}
+	if low < high {
+		fmt.Println(arr)
+		pivotIndex := Partition(arr, low, high)
+		Quicksort(arr, low, pivotIndex-1)
+		Quicksort(arr, pivotIndex+1, high)
+	}
+	return arr
+}
