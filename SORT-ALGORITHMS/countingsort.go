@@ -6,34 +6,39 @@ It is fast when the number of possible values k is smaller than the number of va
 
 package main
 
-import "fmt"
-
-func CountingSort(arr []int) []int {
-	countarr := make([]int, len(arr))
+func CountingSort(arr []uint) []uint {
+	max := uint(0)
+	for _, num := range arr {
+		if num > max {
+			max = num
+		}
+	}
+	countarr := make([]int, max+1)
 
 	for index := 0; index < len(arr); index++ {
-		fmt.Println(arr)
-		fmt.Println(countarr)
 		num := arr[index]
-		if countarr[num] >= 1 {
-			countarr[num] += 1
-		} else {
-			countarr[num] = 1
-		}
-		fmt.Println(index)
-		fmt.Println(len(arr))
-		arr = append(arr[:index], arr[index+1:]...)
-		index--
+		countarr[num] += 1
 	}
+	arr = arr[:0]
 	for in, num := range countarr {
 		for num > 0 {
-			arr = append(arr, in)
+			arr = append(arr, uint(in))
+			num -= 1
 		}
 	}
 	return arr
 }
 
-func main() {
-	arr := []int{7, 8, 9, 7, 2, 3, 4, 2, 3, 1, 4, 1, 6, 7, 6}
-	fmt.Println(CountingSort(arr))
-}
+/*============================================================================================
+TIME COMPLEXITY
+How fast the Counting Sort algorithm runs depends on both the range of possible values k and
+the number of values n. In general, time complexity for Counting Sort is O(n+k).
+In  a best case scenario, the range of possible values k is very small compared to the number
+of values n and Counting Sort has time complexity O(n).
+In a worst case scenario, the range of possible values k is very big compared to number of values
+n and Counting Sort can have time complexity of O(n²) or even worse.
+It is immportant to consider the range of values being sorted before choosing Counting Sort
+as your algorithm. Counting Sort only works for NON NEGATIVE values.
+If the numbers to be sorted varies a lot in value (large k), and there are few numbers to sort
+(small n), the Counting Sort algorithm is not effective.
+==============================================================================================*/
