@@ -8,11 +8,6 @@ package main
 
 import "fmt"
 
-func main() {
-	myArray := []int{100, 150, 64, 34, 25, 3, 2, 10, 12, 22, 11, 90, 5}
-	low, high := 0, 0
-	fmt.Println(Quicksort(myArray, low, high))
-}
 func Partition(arr []int, low, high int) int {
 	pivot := arr[high]
 	i := low - 1
@@ -37,3 +32,11 @@ func Quicksort(arr []int, low, high int) []int {
 	}
 	return arr
 }
+
+/*============================================================================================
+TIME COMPLEXITY
+The worst case scenario for Quicksortis O(n²). This is when the pivot or central element is 
+either the highest or lowest value in every sub-array, which  leads to a lot of recursive calls.
+But on average, the time complexity for Quicksort is actually just O(n log n), which is a lot
+better than for the previous sorting algorithms we have looked at.
+==============================================================================================*/
