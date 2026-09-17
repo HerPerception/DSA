@@ -9,13 +9,12 @@ func diagonalDifference(arr [][]int32) int32 {
 	index := 0
 	length := 0
 	for _, each_arr := range arr {
-		length = len(each_arr)
+		length = len(each_arr) - 1
 		//fmt.Println(each_arr)
 		a += each_arr[index]
 		//fmt.Println(each_arr[index])
 		index += 1
 	}
-	length -= 1
 	for _, each_arr := range arr {
 		//fmt.Println(each_arr)
 		b += each_arr[length]
