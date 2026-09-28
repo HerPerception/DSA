@@ -1,7 +1,7 @@
 def timeConversion(s):
     hour = s[0:2]
-    mins = s[2:len(s)-2]
-    day = s[len(s) -2:]
+    mins = s[2:-2] #Python supports negative indexing so this still works.
+    day = s[-2:]
     try:
         hour = int(hour)
     except ValueError:
@@ -12,5 +12,5 @@ def timeConversion(s):
         hour += 12
         return str(hour) + mins
     else:
-        return s[:len(s)-2] 
+        return s[-2] 
    
