@@ -1,3 +1,7 @@
+package main
+
+import "strconv"
+
 func timeConversion(s string) string {
     hour, err := strconv.Atoi(s[0:2])
     if err != nil {
