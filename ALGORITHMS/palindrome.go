@@ -24,3 +24,26 @@ func isPalindrome(s string) bool {
     }
     return true
 }
+
+
+func isPalindrome(s string) (text, bool) {
+    s = strings.ToLower(s)
+    var builder strings.Builder
+    for i := 0; i < len(s); i++ {
+        c := s[i]
+        // keep only a-z and 0-9
+        if (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') {
+            builder.WriteByte(c)
+        }
+    }
+    text := builder.String()
+    left, right := 0, len(text)-1
+    for left < right {
+        if text[left]!= text[right] {
+            return text, false
+        }
+        left++
+        right--
+    }
+    return text, true
+}
