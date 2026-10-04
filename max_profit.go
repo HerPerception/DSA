@@ -38,3 +38,37 @@ func maxProfit(prices []int) int {
 	}
 	return 0
 }
+
+
+//Second implementation. Still did not pass the test cases
+
+func maxProfit2(prices []int) int {
+	i := 0
+	j := i + 1
+	minVal := prices[0]
+	maxVal := 0
+	maxProfit := 0
+	// buyIndex := 0
+	// sellIndex := 0
+	for i < j && j < len(prices) {
+		if prices[j] > maxVal {
+			//sellIndex = 0
+			maxVal = prices[j]
+		}
+
+		if prices[i] < minVal {
+			//buyIndex = i
+			minVal = prices[i]
+		}
+		if maxVal-minVal > maxProfit {
+			maxProfit = maxVal - minVal
+		}
+		// if buyIndex > sellIndex {
+		// 	maxVal = 0
+		// }
+
+		i++
+		j++
+	}
+	return maxProfit
+}
