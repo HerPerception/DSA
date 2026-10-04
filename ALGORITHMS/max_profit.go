@@ -72,3 +72,25 @@ func maxProfit2(prices []int) int {
 	}
 	return maxProfit
 }
+
+//Third update. Finally passed, had to get assistance though. Seems like I wasn't getting the problem description correctly.
+func maxProfit3(prices []int) int {
+	if len(prices) < 2 {
+		return 0
+	}
+	minPrice := prices[0]
+	maxProfit := 0
+	for i := range prices {
+		currentPrice := prices[i]
+		if currentPrice < minPrice {
+			minPrice = currentPrice
+		} else {
+			currentProfit := currentPrice - minPrice
+			if currentProfit > maxProfit {
+				maxProfit = currentProfit
+			}
+		}
+
+	}
+	return maxProfit
+}
