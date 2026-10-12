@@ -26,3 +26,28 @@ func maxArea(height []int) int {
     }
     return maxWater
 }
+
+// SECOND IMPLEMENTATION. 0ms RUNTIME
+func maxArea2(height []int) int {
+    left := 0
+    right := len(height)-1
+    maxWater := 0
+    for left < right {
+        if height[left] < height[right] {
+            area := (right - left) * height[left]
+        if area > maxWater {
+            maxWater = area
+        }
+            left++
+        } else {
+        area := (right - left) * height[right]
+        if area > maxWater {
+            maxWater = area
+        }
+            right--
+        } 
+        
+        
+    }
+    return maxWater
+}
