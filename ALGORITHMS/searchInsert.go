@@ -17,5 +17,17 @@ func searchInsert(nums []int, target int) int {
         }
     }
 
+    //First implementation. Fully mine. Did not pass all the test cases.
+    func searchInsert(nums []int, target int) int {
+    for i, num := range nums {
+        if num == target {
+            return i
+        } else if i < len(nums)-1 && num < target && nums[i+1] > target {
+            return target - num
+        } 
+    }
+    return len(nums)
+}
+
     return left
 }
