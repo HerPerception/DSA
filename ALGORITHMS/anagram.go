@@ -22,3 +22,21 @@ func isAnagram(s string, t string) bool {
     }
     return true
 }
+
+//Second implementation. 5ms runtime..., 4.76MB memory use.
+func isAnagram2(s string, t string) bool {
+    if len(s) != len(t) {
+        return false
+    }
+    anagramMap := make(map[rune]int)
+    for _, ch := range s {
+        anagramMap[ch]++
+    }
+    for _, ch := range t {
+        anagramMap[ch]--
+        if anagramMap[ch] < 0 {
+            return false
+        }
+    }
+    return true
+}
