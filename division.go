@@ -1,4 +1,7 @@
 package main
+
+import "math"
+
 //First implementation. Passed 990 of 994 test cases
 func divide(dividend int, divisor int) int {
     neg := false
@@ -26,10 +29,8 @@ if dividend < 0 {
     return count
 }
 
-import "math"
-
 //Second implementation. AI assissted. Passed all test cases
-func divide(dividend int, divisor int) int {
+func divide2(dividend int, divisor int) int {
 	if dividend == math.MinInt32 && divisor == -1 {
 		return math.MaxInt32
 	}
