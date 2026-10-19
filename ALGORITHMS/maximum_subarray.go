@@ -17,7 +17,7 @@ func maxSubArray(nums []int) int {
 }
 
 //Second implementation. Assisted.
-func maxSubArray(nums []int) int {
+func maxSubArray2(nums []int) int {
     current, best := nums[0], nums[0]
 
     for _, num := range nums[1:] {

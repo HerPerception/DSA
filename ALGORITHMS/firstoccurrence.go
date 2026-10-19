@@ -1,6 +1,6 @@
 package main
 
-func strStr(haystack string, needle string) int {
+func strStr2(haystack string, needle string) int {
     if haystack == needle {
         return 0
     }
