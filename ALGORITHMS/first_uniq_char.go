@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -45,7 +44,7 @@ func firstUniqChar2(s string) int {
 	return -1
 }
 
-func main() {
-	fmt.Println(firstUniqChar("Hhello"))
-	fmt.Println(firstUniqChar2("Hello"))
-}
+// func main() {
+// 	fmt.Println(firstUniqChar("Hhello"))
+// 	fmt.Println(firstUniqChar2("Hello"))
+// }
