@@ -9,3 +9,12 @@ func xorOperation(n int, start int) int {
     }
     return result
 }
+
+
+// The bitwise XOR (Exclusive OR) operator compares two numbers bit by bit (in their binary 0 and 1 formats) and applies one simple rule:
+// It returns a 1 if the two bits are different, and a 0 if they are the same.
+// Think of it like a strict "either-or" switch:
+// • 1 and 0 → 1 (They are different)
+// • 0 and 1 → 1 (They are different)
+// • 0 and 0 → 0 (They are the same)
+// • 1 and 1 → 0 (They are the same)
