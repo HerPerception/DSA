@@ -1,3 +1,8 @@
+# THIS SOLVES THE HACKERRANK TASK: APPLE AND ORANGE. MY OWN LOGIC. 
+# Was originally implemented in Golang. Debugging was AI assisted.
+# s and t is the range of Sam's house. The apple tree is located at a while the orange tree is located at b.
+# The slices of ints apples and oranges contain the distances the apple and orange fruits fall from the tree. 
+# The task is to find how many apple and orange fruits land on Sam's house.
 def countApplesAndOranges(s, t, a, b, apples, oranges):
     countApple = 0
     countOrange = 0
