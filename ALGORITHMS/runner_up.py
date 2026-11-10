@@ -9,3 +9,13 @@ if __name__ == '__main__':
         if arr[i] < first:
             print(arr[i])
             break
+
+# Second implementation. Logic by AI
+def runner_up():
+    n = int(input())
+    arr = map(int, input().split())
+    arr = set(arr)
+    arr = list(arr)
+    arr.sort()
+    print(arr[-2])
+   
