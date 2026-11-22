@@ -9,3 +9,6 @@ class Solution:
                 return False
 
         return True
+# Second implementation. Suggested by AI. 0ms runtime and 19.27MB memory use.
+    def checkString2(self, s: str) -> bool:
+        return "ba" not in s
