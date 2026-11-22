@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 // First implementation. Logic is mine. 0ms runtime and 4.66MB memory use.
 func checkString(s string) bool {
     b_seen := false
@@ -22,4 +24,10 @@ func checkString2(s string) bool {
         }
     }
         return true
+}
+
+
+// Third implementation. Suggested by AI. 0ms runtime and 4.68MB memory use.
+func checkString3(s string) bool {
+    return !strings.Contains(s, "ba")
 }
