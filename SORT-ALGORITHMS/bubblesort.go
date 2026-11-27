@@ -78,3 +78,17 @@ func BubbleSort() {
 	==========================================================================================*/
 	
 }
+
+func main() {
+	arrayNum := []int{8, 7, 4, 6, 5, 9, 0, 3, 10, 2, 1}
+	n := len(arrayNum)
+
+	for count := 0; count < n-1; count++ {
+		for in := 0; in < n-count-1; in++ {
+			if arrayNum[in] > arrayNum[in+1] {
+				arrayNum[in], arrayNum[in+1] = arrayNum[in+1], arrayNum[in]
+			}
+		}
+		fmt.Println(arrayNum)
+	}
+}
