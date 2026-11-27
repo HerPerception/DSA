@@ -44,3 +44,21 @@ Time complexity is O(n²)
 For Insertion Sort, there is a big difference between best, average and worst case scenarios. 
 ==============================================================================================*/
 
+
+/*=============================================================================================
+This version was written with a better understanding of insertion sort after a collaboration 
+session with Mr. Emmanuel Oduh. This is my own implementation.
+===============================================================================================*/
+func insertionSort(arr []int)[]int {
+  for i := 1; i < len(arr); i++ {
+    for j := i; j > 0; j-- {
+      if arr[j] < arr[j-1] {
+        fmt.Println(arr[i], arr[j])
+        arr[j], arr[j-1] = arr[j-1], arr[j]
+      } else {
+        break
+      }
+    }
+  }
+  return arr
+}
