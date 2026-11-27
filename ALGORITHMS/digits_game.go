@@ -16,3 +16,16 @@ func canAliceWin(nums []int) bool {
     }
     return false
 }
+
+// Second implementation. 0ms runtime and 5.44MB memory use.
+func canAliceWin(nums []int) bool {
+    total := 0
+    for _, num := range nums {
+        if num < 10 {
+            total -= num
+        } else {
+            total += num
+        }
+    }
+  return total != 0
+}
